@@ -1,0 +1,40 @@
+palettes:
+  - name: global_palette
+    fixed-entries:
+      - color: {index: 0, r: 200, g: 200, b: 200}
+      - color: {index: 1, r:   0, g:  85, b: 255}
+      - color: {index: 2, r:   0, g: 170, b:   0}
+      - color: {index: 3, r: 255, g:   0, b:   0}
+      - color: {index: 4, r: 170, g:   0, b: 127}
+      - color: {index: 5, r: 170, g:  85, b:   0}
+      - color: {index: 6, r:   0, g: 170, b: 170}
+      - color: {index: 7, r: 170, g:   0, b: 255}
+      - color: {index: 8, r:  85, g:  85, b:  85}
+      - color: {index: 9, r:  0, g: 0, b: 0}
+    images: automatic
+
+converts:
+  - name: sprites
+    palette: global_palette
+    transparent-color-index: 0
+    images:
+      - sprite_1.png
+      - sprite_2.png
+      - sprite_3.png
+      - sprite_4.png
+      - sprite_5.png
+      - sprite_6.png
+      - sprite_7.png
+      - sprite_8.png
+      - sprite_mine.png
+      - sprite_flag.png
+      - sprite_tile.png
+
+outputs:
+  - type: c
+    include-file: gfx.h
+    palettes:
+      - global_palette
+    converts:
+      - sprites
+
