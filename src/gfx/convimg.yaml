@@ -29,6 +29,7 @@ converts:
       - sprite_mine.png
       - sprite_flag.png
       - sprite_tile.png
+      - sprite_cursor.png
 
 outputs:
   - type: c
