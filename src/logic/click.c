@@ -21,8 +21,8 @@ void clickCell(int cellX, int cellY) {
     CellState* cell = &grid[cellX][cellY];
     // If this is the first move, generate mines avoiding this cell and neighbors.
     if (isFirstMove) {
-        srandom(timer_Get(3) ^ 0xDEADBEEF); // seed RNG with timer value
-        timer_Disable(3);
+        srandom(timer_Get(2) ^ 0xDEADBEEF); // seed RNG with timer value
+        timer_Disable(2);
         generateMinesExcluding(cellX, cellY);
         isFirstMove = false;
     }
@@ -49,6 +49,6 @@ void clickCell(int cellX, int cellY) {
         }
     } else if (*cell == CELL_MINE) {
         // Revealed a mine after first move -> game over
-        gameIsOver = true;
+        gameIsExplode = true;
     }
 }

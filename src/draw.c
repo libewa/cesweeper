@@ -31,7 +31,7 @@ void drawCells(void) {
                         // do nothing
                         break;
                     case CELL_MINE:
-                        if (gameIsOver) {
+                        if (gameIsExplode) {
                             drawSpriteInGrid(sprite_mine, x, y);
                         }
                         break;
@@ -73,4 +73,14 @@ void drawCells(void) {
                 }
             }
         }
+}
+
+void drawPopup(const char* text) {
+    gfx_SetColor(3); // red
+    gfx_FillRectangle(10, 50, 200, 100);
+    gfx_SetColor(9); // black
+    gfx_Rectangle(10, 50, 200, 100);
+    gfx_SetTextBGColor(3);
+    gfx_SetTextFGColor(9);
+    gfx_PrintStringXY(text, 20, 90);
 }

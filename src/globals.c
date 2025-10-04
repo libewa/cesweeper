@@ -10,4 +10,9 @@ CellState grid[9][9];
 CellState* currentCell = &grid[4][4];
 
 bool isFirstMove = true;
-bool gameIsOver = false;
+bool gameIsExplode = false;
+bool gameIsWon = false;
+bool inTextEntry = false;
+
+ScoreEntry playerScore = {0};
+ScoreEntry scores[5] = {0};

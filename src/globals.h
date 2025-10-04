@@ -25,4 +25,15 @@ extern CellState grid[9][9];
 extern CellState* currentCell;
 
 extern bool isFirstMove;
-extern bool gameIsOver;
+extern bool gameIsExplode;
+extern bool gameIsWon;
+extern bool inTextEntry;
+
+typedef struct {
+    char name[10];
+    unsigned long time;
+} ScoreEntry;
+
+extern ScoreEntry playerScore;
+
+extern ScoreEntry scores[5];

@@ -6,8 +6,7 @@
         "*.js.liquid": "liquid-javascript",
         "*.css.liquid": "liquid-css",
         "*.scss.liquid": "liquid-scss",
-        "globals.h": "c",
-        "gfx.h": "c",
-        "neighbors.h": "c"
+        "saves.h": "c",
+        "globals.h": "c"
     }
 }
