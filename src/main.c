@@ -6,6 +6,7 @@
 #include "gfx/gfx.h"
 
 int main(void) {
+    timer_Enable(3, TIMER_32K, TIMER_NOINT, TIMER_UP); // start timer to seed RNG on first click
     kb_EnableOnLatch();
     kb_ClearOnLatch();
     gfx_Begin();
