@@ -2,3 +2,4 @@
 !.gitignore
 !*.png
 !convimg.yaml
+!tile_names.h

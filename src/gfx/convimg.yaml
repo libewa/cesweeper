@@ -18,18 +18,13 @@ converts:
     palette: global_palette
     transparent-color-index: 0
     images:
-      - sprite_1.png
-      - sprite_2.png
-      - sprite_3.png
-      - sprite_4.png
-      - sprite_5.png
-      - sprite_6.png
-      - sprite_7.png
-      - sprite_8.png
-      - sprite_mine.png
-      - sprite_flag.png
-      - sprite_tile.png
       - sprite_cursor.png
+    tilesets:
+      tile-width: 9
+      tile-height: 9
+      images:
+        - tileset.png
+      pointer-table: true
 
 outputs:
   - type: c
@@ -38,4 +33,3 @@ outputs:
       - global_palette
     converts:
       - sprites
-
