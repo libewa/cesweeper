@@ -67,8 +67,14 @@ void drawCells(void) {
                         }
                         break;
                     case CELL_FLAGGED_EMPTY:
-                    case CELL_FLAGGED_MINE:
                         drawSpriteInGrid(sprite_flag, x, y);
+                        break;
+                    case CELL_FLAGGED_MINE:
+                        if (gameIsExplode) {
+                            drawSpriteInGrid(sprite_mine, x, y);
+                        } else {
+                            drawSpriteInGrid(sprite_flag, x, y);
+                        }
                         break;
                 }
             }
@@ -83,4 +89,26 @@ void drawPopup(const char* text) {
     gfx_SetTextBGColor(3);
     gfx_SetTextFGColor(9);
     gfx_PrintStringXY(text, 20, 90);
+}
+
+void drawHighScoreList(void) {
+    gfx_SetColor(3); // red
+    gfx_FillRectangle(90, 10, 130, 100);
+    gfx_SetColor(9); // black
+    gfx_Rectangle(90, 10, 130, 100);
+    gfx_SetTextFGColor(9);
+    gfx_SetTextBGColor(3);
+    gfx_SetTextXY(100, 20);
+    gfx_PrintString("High Scores:");
+    for (int i = 0; i < 5; i++) {
+        gfx_SetTextXY(100, 40 + i * 10);
+        if (scores[i].time != 0) {
+            gfx_PrintString(scores[i].name);
+            gfx_SetTextXY(160, 40 + i * 10);
+            gfx_PrintUInt(scores[i].time, 3);
+            gfx_PrintChar('s');
+        } else {
+            gfx_PrintString("--");
+        }
+    }
 }

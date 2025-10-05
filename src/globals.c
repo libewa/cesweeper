@@ -12,7 +12,8 @@ CellState* currentCell = &grid[4][4];
 bool isFirstMove = true;
 bool gameIsExplode = false;
 bool gameIsWon = false;
-bool inTextEntry = false;
+bool gameEndPopup = false;
+bool hideHighScores = false;
 
 ScoreEntry playerScore = {0};
 ScoreEntry scores[5] = {0};

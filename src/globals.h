@@ -27,7 +27,8 @@ extern CellState* currentCell;
 extern bool isFirstMove;
 extern bool gameIsExplode;
 extern bool gameIsWon;
-extern bool inTextEntry;
+extern bool gameEndPopup;
+extern bool hideHighScores;
 
 typedef struct {
     char name[10];

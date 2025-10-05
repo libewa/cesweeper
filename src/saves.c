@@ -1,8 +1,10 @@
 #include "saves.h"
 #include <fileioc.h>
 
-bool loadScores(ScoreEntry scores[5]) {
-    unsigned char handle = ti_Open("MSSCORES", "r");
+const char fileName[] = "MSSCORES";
+
+bool loadScores() {
+    unsigned char handle = ti_Open(fileName, "r");
     if (handle == 0) {
         return false; // File doesn't exist or couldn't be opened
     }
@@ -11,13 +13,15 @@ bool loadScores(ScoreEntry scores[5]) {
     return true;
 }
 
-bool saveScores(const ScoreEntry scores[5]) {
-    unsigned char handle = ti_Open("MSSCORES", "w");
+bool saveScores() {
+    unsigned char handle = ti_Open(fileName, "w");
+    ti_SetArchiveStatus(false, handle);
     if (handle == 0) {
         return false; // Failed to open file for writing
     }
     ti_Write(scores, sizeof(ScoreEntry), 5, handle);
     ti_Close(handle);
+    ti_SetArchiveStatus(true, handle);
     return true;
 }
 

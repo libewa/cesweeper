@@ -13,3 +13,6 @@ CXXFLAGS = -Wall -Wextra -Oz
 # ----------------------------
 
 include $(shell cedev-config --makefile)
+
+upload: all
+	tilp -n bin/$(NAME).8xp
