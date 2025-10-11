@@ -9,6 +9,8 @@ int cursorY = 4;
 CellState grid[9][9];
 CellState* currentCell = &grid[4][4];
 
+clock_t gameTime;
+
 bool isFirstMove = true;
 bool gameIsExplode = false;
 bool gameIsWon = false;

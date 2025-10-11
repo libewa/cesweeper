@@ -7,12 +7,11 @@
 #include "saves.h"
 #include "logic/free_tiles.h"
 #include "keypad.h"
-#include <time.h>
 #include <ti/getcsc.h>
 #include <graphx.h>
 
 int main(void) {
-    timer_Enable(2, TIMER_32K, TIMER_NOINT, TIMER_UP); // start timer to seed RNG on first click
+    gameTime = clock();
     kb_EnableOnLatch();
     kb_ClearOnLatch();
     gfx_Begin();
@@ -24,8 +23,6 @@ int main(void) {
     while (kb_AnyKey()) {}
 
     loadScores(scores);
-
-    clock_t gameTime = clock();
     int nameIndex = 0; /* index for non-blocking name entry */
 
     // mines are generated on first click so the first move is always safe

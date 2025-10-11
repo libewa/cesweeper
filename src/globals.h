@@ -2,7 +2,7 @@
 
 #include <ti/getkey.h>
 #include <keypadc.h>
-#include <sys/timers.h>
+#include <time.h>
 #include "gfx/tile_names.h"
 
 #define SCALE 3
@@ -23,6 +23,8 @@ typedef enum {
 
 extern CellState grid[9][9];
 extern CellState* currentCell;
+
+extern clock_t gameTime;
 
 extern bool isFirstMove;
 extern bool gameIsExplode;

@@ -1,5 +1,6 @@
 #include "mines.h"
 #include "../globals.h"
+#include <sys/util.h>
 
 /* Place 10 mines randomly but never on (excludeX,excludeY) or its 8 neighbors.
    This guarantees the first click is always safe. */
