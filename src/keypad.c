@@ -4,6 +4,8 @@
 char getKeypadInput(void) {
     uint8_t key = os_GetCSC();
     switch (key) {
+        case sk_Del:
+            return '\b'; // Backspace
         case sk_Math:
             return 'A';
         case sk_Apps:

@@ -3,7 +3,7 @@
 
 const char fileName[] = "MSSCORES";
 
-bool loadScores() {
+bool loadScores(void) {
     unsigned char handle = ti_Open(fileName, "r");
     if (handle == 0) {
         return false; // File doesn't exist or couldn't be opened
@@ -13,7 +13,7 @@ bool loadScores() {
     return true;
 }
 
-bool saveScores() {
+bool saveScores(void) {
     unsigned char handle = ti_Open(fileName, "w");
     ti_SetArchiveStatus(false, handle);
     if (handle == 0) {

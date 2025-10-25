@@ -22,7 +22,7 @@ int main(void) {
 
     while (kb_AnyKey()) {}
 
-    loadScores(scores);
+    loadScores();
     int nameIndex = 0; /* index for non-blocking name entry */
 
     // mines are generated on first click so the first move is always safe
@@ -102,10 +102,8 @@ int main(void) {
                 gfx_SetTextXY(20, 80);
                 gfx_PrintUInt(playerScore.time, 3);
                 gfx_PrintChar('s');
-                /* ensure text colors for the popup are set before printing name */
                 gfx_SetTextBGColor(3);
                 gfx_SetTextFGColor(9);
-                /* draw current name buffer every frame so it persists across redraws */
                 gfx_PrintStringXY(playerScore.name, 20, 110);
 
                 char input = getKeypadInput();
@@ -115,7 +113,7 @@ int main(void) {
                     playerScore.name[nameIndex] = '\0';
                     gameEndPopup = false;
                     saveCurrentScore();
-                    saveScores(scores);
+                    saveScores();
                 } else if (input == '\b') {
                     /* backspace */
                     if (nameIndex > 0) {
@@ -129,7 +127,6 @@ int main(void) {
                 }
             }
         }
-
 
         gfx_SwapDraw();
     }

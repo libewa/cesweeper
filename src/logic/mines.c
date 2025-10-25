@@ -2,7 +2,7 @@
 #include "../globals.h"
 #include <sys/util.h>
 
-/* Place 10 mines randomly but never on (excludeX,excludeY) or its 8 neighbors.
+/** Place 10 mines randomly but never on (excludeX,excludeY) or its 8 neighbors.
    This guarantees the first click is always safe. */
 void generateMinesExcluding(int excludeX, int excludeY) {
     const int width = 9;
